@@ -1,0 +1,38 @@
+<!DOCTYPE html>                 <!--Es wird HTML verwendet-->
+<html>
+    <head>              <!--Einbindung relevanter Verknüpfungen-->
+        <title>SQL-Quiz</title>                     <!--Erstellung des Titels--> 
+        <link rel="stylesheet" href="auswertung.css">      <!--Verknüpfung mit der CSS-Datei, welche die Website designet--> 
+        <script src="auswertung.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">                 <!--Einbindung der Schriftart-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="balkenoben">     <!--Erstellung eines oberen Balkens-->
+        <h1>SQL-Quiz</h1>                   <!--Erstellung Überschrift-->
+        <hr>
+        </div> 
+        <div class="buttoncontainer">
+            <button onclick="showScore('score')">Zeige mir meinen Score!</button>
+        </div>
+        <div class="auswertung">
+            <h2>Sie haben einen Score von</h2>
+            <h2 id="score">?</h2> <h2>von x möglichen Punkten</h2>
+            <h2>in unserem SQL-Quiz erreicht!</h2>
+        </div>
+        <div class="buttoncontainer">       <!-- Erstellung eines Divs, welcher einen Start und einen HIlfe Button einbindet (wichtig für css....)-->
+            <button onclick="location.replace('fragen.html')">Restart</button> <!--mit dem drücken des Start-Buttons wird in eine neue HTML-Datei gewechselt-->
+        </div>
+        
+        <div class="balkenunten">
+        <p>
+            Ausgearbeitet und erstellt von Lena Hoffmann und Lia Schneider      <!--kurzer Text zu uns-->
+            <br>                    <!--Absatz-->
+            im Rahmen der Komplexaufgabe des Informatikunterrichts 
+            <br>
+            der Klasse 12.
+        </p>
+       </div>     <!--unterer grüner Balken wird erstellt und für das CSS in eine Class eingebunden-->
+    </body>
+</html>

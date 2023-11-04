@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+    <head>              <!--Einbindung aller relevanter Verknüpfungen, Titelgebung-->
+        <title>SQL-Quiz</title>                     <!--Titel-->
+        <script src="fragen.js"></script>           <!--JS-Datei-->
+        <link rel="stylesheet" href="fragen.css">   <!--CSS-Datei-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">     <!--Schriftart-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body> 
+        <div class="balkenoben">
+            <h1>SQL-Quiz</h1>
+            <hr>
+        </div>
+    <div class="erklärung">
+        <p>Das gesamte Quiz baut auf unserer Datenbank zum Thema Kunst auf. Diese Datenbank wird zum lösen der meisten Aufgaben zwingend benötigt. Bitte öffnen Sie diese bevor Sie das Quiz starten.
+        </p>        <!--Erklärungstext-->
+    </div>
+    <figure>   <!--Bild ERM-Kunst.png wird eingebunden, soll die Breite der Seite komplett ausfüllen, figcaption: Bildunterschrift-->
+        <div class="figures">
+            <img src="ERM-Kunst.png" width="95%">
+        </div>
+        <figcaption>Abbildung 1: Das ERM der Datenbank</figcaption>
+   </figure>
+    <figure>   <!--Bild künstlertabelle.png wird eingebunden, soll die Breite der Seite komplett ausfüllen, figcaption: Bildunterschrift-->
+        <div class="figures">
+            <img src="künstlertabelle.png" width="95%">
+        </div> 
+         <figcaption>Abbildung 2: Tabelle der Künstler aus der Kunst-Datenbank</figcaption>
+    </figure>
+     
+    
+        
+       
+   
+        <h2>1. Single Choice</h2>
+        <p class="fragestellung">Mit welchem Befehl werden Einträge der Spalte "Medium" aus der Tabelle "Kunstwerk" ausgegeben?</p>
+           
+        <form name="formname">              
+            <!--Erstellung eines Containers mit jeweils einem Anklick-Element (radio), Beschriftung (label)-->
+            <div class="div">
+                <input class="input" type="radio" name="select" value="SELECTMediumFROMKunstwerk">
+                <label for="SELECT Medium FROM Kunstwerk">SELECT Medium FROM Kunstwerk</label>
+            </div>
+            <div class="div">
+                <input class="input" type="radio" name="select" value="EXTRACT*MediumKunstwerk">
+                <label for="EXTRACT * Medium Kunstwerk">EXTRACT * Medium Kunstwerk</label><br>
+            </div>
+            <div class="div">
+                <input class="input" type="radio" name="select" value="SELECT*FROMMediumKunstwerk">
+                <label for="SELECT * FROM Medium Kunstwerk">SELECT * FROM Medium Kunstwerk</label>
+            </div>
+        </form>
+        <button id="submit1" onclick="parseSingleChoice('formname', 'select', 'submit1' , 'SELECTMediumFROMKunstwerk')">Submit</button>
+            <!--durch das klicken des Submit BUttons, werden die Antworten der Form geprüft, Befehl in JS-Datei unter parseSingleChoice-->
+       
+       
+
+
+       
+       <p class="fragestellung">Beim Befehl "SELECT LName FROM Land WHERE Sprache = `Spanisch`" …</p>
+           
+        <form name="where">
+            <div class="div">
+                <input class="input" type="radio" name="where" value="ans1">
+                <label for="ans1"></label>…wird das LName, wo die Sprache nicht Spanisch ist ausgegeben.</label>
+            </div>
+            <div class="div">
+                <input class="input" type="radio" name="where" value="ans2">
+                <label for="ans2">…wird Fehler gemeldet.</label><br>
+            </div>
+            <div class="div">
+                <input class="input" type="radio" name="where" value="ans3">
+                <label for="ans3">…wird die Sprache ausgegeben.</label>
+            </div>
+            <div class="div">
+                <input class="input" type="radio" name="where" value="ans4">
+                <label for="ans4">…wird das LName, wo die Sprache Spanisch ist ausgegeben.</label>
+            </div>
+        </form>
+        <button id="submit2" onclick="parseSingleChoice('where', 'where', 'submit2' , 'ans4')">Submit</button>
+
+
+       
+       <p class=fragestellung>Welches Keyword wird verwendet, wenn mindestens eine Bedingung erfüllt werden muss?</p>
+            
+         <form name="or">
+             <div class="div">
+                 <input class="input" type="radio" name="or" value="AND">
+                 <label for="AND">AND</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="radio" name="or" value="NOT">
+                 <label for="NOT">NOT</label><br>
+             </div>
+             <div class="div">
+                 <input class="input" type="radio" name="or" value="OR">
+                 <label for="OR">OR</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="radio" name="or" value="MIN(1)">
+                 <label for="MIN(1)">MIN(1)</label>
+             </div>
+         </form>
+         <button id="submit3" onclick="parseSingleChoice('or', 'or', 'submit3' , 'OR')">Submit</button></p>
+           
+         
+            <p class="fragestellung">Welcher Befehl löscht die komplette Tabelle?</p>
+            
+            <form name="delete">
+                <div class="div">
+                    <input class="input" type="radio" name="delete" value="DROPTABLE">
+                    <label for="DROP TABLE">DROP TABLE</label>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="delete" value="DELETEFROMTABLE">
+                    <label for="DELETE FROM TABLE">DELETE FROM TABLE</label><br>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="delete" value="DELETeALLTABLE">
+                    <label for="DELETE ALL TABLE">DELETE ALL TABLE</label>
+                </div>
+            
+            </form>
+            <button id="submit4" onclick="parseSingleChoice('delete', 'delete', 'submit4' , 'DROPTABLE')">Submit</button></p>
+              
+            <p class="fragestellung">Welcher dieser Befehle kombiniert alle Datensätze miteinander?</p>
+            
+            <form name="join">
+                <div class="div">
+                    <input class="input" type="radio" name="join" value="INNERJOIN">
+                    <label for="INNER JOIN">INNER JOIN</label>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="join" value="RIGHTJOIN">
+                    <label for="RIGHT JOIN">RIGHT JOIN</label><br>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="join" value="FULLJOIN">
+                    <label for="FULL JOIN">FULL JOIN</label>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="join" value="LEFTJOIN">
+                    <label for="LEFT JOIN">LEFT JOIN</label>
+                </div>
+            
+            </form>
+            <button id="submit5" onclick="parseSingleChoice('join', 'join', 'submit5' , 'FULLJOIN')">Submit</button></p>
+
+         <h2>2. Lückentext</h2>
+         <p class="fragestellung">Füllen Sie die Lücken aus.
+            <br>
+            Bitte achten Sie dabei darauf, dass Sie alle Befehle in Großbuchstaben eingeben.
+         </p>
+         <form name="lückentext">
+             <p class="lückentext">
+                Eintragen neuer Werte in die Tabelle: <br>
+                INSERT
+                 <input class="input" type="text" id="lückentext" name="lückentext">        <!--Es entsteht ein Eingabefeld-->
+                 Museum (MID, MName, MOrt, Preis)
+                 <input class="input" type="text" id="lückentext" name="lückentext">
+                 ('21', 'Secret Art', 'Lichtenstein', '14')
+                 <br>
+                 <br>
+                Durchschnitt bilden: <br>
+                SELECT 
+                 <input class="input" type="text" id="lückentext" name="lückentext">
+                 (Preis) FROM Museen 
+                <br>
+                <br>
+                Künstler, die mit "A" <br>
+                SELECT * FROM Künstler
+                <input class="input" type="text" id="lückentext" name="lückentext">
+               KName
+                <input class="input" type="text" id="lückentext" name="lückentext">
+                'A%'
+               <br>
+               <br>
+               Alle Museen, die in Deutschland oder Frankreich liegen:
+                SELECT * FROM Museen WHERE Land
+                <input class="input" type="text" id="lückentext" name="lückentext">
+                ('Deutschland', 'Frankreich')
+             </p>
+         </form>
+         <button id="submit6" onclick="parseGapText('lückentext', 'submit6' ,['INTO', 'VALUES', 'AVG', 'WHERE', 'LIKE', 'IN'])">Submit</button>
+                        <!--durch das klicken des Submit Buttons werden alle Eingaben überprüft -> Werte des Arrays sind die richtigen Eingaben-->
+         
+
+         <h2>3. Wahr-Falsch</h2>
+         <p class="fragestellung">Klicken Sie an ob die Aussagen wahr oder falsch sind.</p>
+         <form name="Wahr-Falsch" id="Wahr-Falsch">
+            <table>     <!--Anlegen einer Tabelle-->
+             <tr>       <!--Tabellenzeile-->
+                 <th ><h3>Frage</h3></th>   <!--th<=Tebellenzelle-->
+                 <th ><h3>Wahr</h3></th>
+                 <th ><h3>Falsch</h3></th>
+             </tr>
+         
+             <tr>
+                 <th>Bei SELECT DISTINCT werden nur unterschiedliche Werte ausgegeben.</th>
+                 <th><input class="input" type="radio" name="wf1" value="true"></th>            <!--Erstellung eines klickbaren Elements-->
+                 <th><input class="input" type="radio" name="wf1" value="false"></th>
+             </tr>
+             <tr>
+                 <th>AND wird eingesetzt, wenn alle Aussagen wahr sein müssen und ANY, wenn mindestens eine Aussage wahr sein muss.</th>
+                 <th><input class="input" type="radio" name="wf2" value="true"></th>
+                 <th><input class="input" type="radio" name="wf2" value="false"></th>
+             </tr>
+             <tr>
+                <th>INNER JOIN gibt Zeilen, die nicht übereinstimmen aus beiden Tabellen aus.</th>
+                <th><input class="input" type="radio" name="wf3" value="true"></th>
+                <th><input class="input" type="radio" name="wf3" value="false"></th>
+            </tr>
+            <tr>
+               <th>RIGHT JOIN gibt Zeilen die TRUE sind aus.</th>
+               <th><input class="input" type="radio" name="wf4" value="true"></th>
+               <th><input class="input" type="radio" name="wf4" value="false"></th>
+           </tr>
+           <tr>
+               <th>LEFT JOIN gibt alle Zeilen aus der linken Tabelle und die übereinstimmenden Zeilen aus der rechten Tabelle aus</th>
+               <th><input class="input" type="radio" name="wf5" value="true"></th>
+               <th><input class="input" type="radio" name="wf5" value="false"></th>
+           </tr>
+           <tr>
+            <th>FULL JOIN  ist kein SQL-Befehl.</th>
+            <th><input class="input" type="radio" name="wf6" value="true"></th>
+            <th><input class="input" type="radio" name="wf6" value="false"></th>
+            </tr>
+            <tr>
+                <th>SELF JOIN verknüpft eine Tabelle mit sich selbst.</th>
+                <th><input class="input" type="radio" name="wf7" value="true"></th>
+                <th><input class="input" type="radio" name="wf7" value="false"></th>
+            </tr>
+            <tr>
+                <th>Die Groß- und Kleinschreibung ist bei SQL Keywords relevant ('WHERE' ist nicht gleich 'where').</th>
+                <th><input class="input" type="radio" name="wf8" value="true"></th>        
+                <th><input class="input" type="radio" name="wf8" value="false"></th>
+            </tr>
+     </table>
+ 
+         </form>
+         <button id="submit7" onclick="parseTrueFalse('Wahr-Falsch', ['wf1', 'wf2', 'wf3', 'wf4', 'wf5', 'wf6', 'wf7', 'wf8'], 'submit7' , ['true', 'true', 'false', 'false', 'true', 'false', 'true', 'false'])">Submit</button>
+                <!--durch klicken des buttons werden Lösungen kontrolliert -> Anlegung array-->
+         
+ 
+         <h2>4. Multiple Choice</h2>
+         <p>Wählen Sie die richtigen Lösungen aus.</p>
+         <p class="fragestellung">Wie kann man sich alle Datensätze aus der Tabelle "Künstler" alphabetisch nach "KName" angeben lassen?</p>
+            
+         <form name="question8">
+             <div class="div">      <!--Erstellung von Divs mit jeweils einem klickbaren Element (checkbox), und einer Beschriftung (label)-->
+                 <input class="input" type="checkbox" value="A">
+                 <label>SELECT * FROM Künstler ORDER BY KName</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="checkbox" value="B">
+                 <label>SELECT * FROM Künstler ORDER BY KName ASC</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="checkbox"  value="C">
+                 <label>SELECT * FROM Künstler ORDER BY KName DESC</label>
+             </div>
+             <div class="div">
+                <input class="input" type="checkbox" value="D">
+                <label>SELECT KID, KName, Kunstwerk, Geburtstjahr, Todesjahr, Nationalität FROM Künstler ORDER BY KName ASC</label>
+            </div>
+            <div class="div">
+                <input class="input" type="checkbox"  value="E">
+                <label>SELECT KID, KName, Kunstwerk, Geburtstjahr, Todesjahr, Nationalität FROM Künstler ORDER BY KName DESC</label>
+            </div>
+         </form>
+         <button id="submit8" onclick="parseMultipleChoice('question8', 'submit8' , [true, false, true, true, true])">Submit</button>
+                <!--durch klicken des BUttons werden Lösungen überprüft, Array definiert Lösungen-->
+
+         <p class="fragestellung">Wie kann man sich den höchsten Preis der Museen anzeigen lassen?</p> 
+         <form name="multiplechoice2">
+             <div class="div">
+                 <input class="input" type="checkbox" value="A">
+                 <label>SELECT TOP 1 FROM Museen ORDER BY Preis</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="checkbox" value="B">
+                 <label>SELECT MAX(Preis) FROM Künstler</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="checkbox" value="C">
+                 <label>SELECT HIGHEST FROM Künstler ORDER BY Preis</label>
+             </div>
+         </form>
+         <button id="submit9" onclick="parseMultipleChoice('multiplechoice2', 'submit9' , [true, true, false,])">Submit</button>
+         
+         <h2>5. Zuordnen</h2>
+         <p class="fragestellung">Bitte ordnen Sie der Antwort der 3. Spalte den richtigen Partner zu indem Sie den Buchstaben, welcher vor der richtigen Antwort in der ersten Spalte steht in das Eingabefeld (Spalte 2) vor die richtige Antwort der 3. Spalte schreiben.
+            <br> In der Aufgabe werden die allgemeinen Wildcards abgefragt, auch wenn Microsoft Access teilweise andere Symbole unterstützt. 
+         </p>
+         <form name="zuordnen" id="zuordnen">
+            <table>     <!--Anlegen einer Tabelle-->
+             <tr>
+                 <th ><h3>Wildcard</h3></th>
+                 <th><h3>Buchstabe</h3></th>
+                 <th ><h3>Funktion</h3></th>
+                 
+             </tr>
+             <tr>
+                 <th>A: []</th>
+                 <th><input class="input1" type="text" id="B" name="zuordnen" placeholder="?"></th>      <!--Erstellung eines Eingabefeldes, welches momentan durch den Platzhalter "?" gefüllt ist-->
+                 <th class="spalte3">steht für kein oder mehr als ein nicht vorhandene Zeichen</th>
+             </tr>
+             <tr>
+                <th>B: %</th>
+                <th><input class="input1" type="text" id="D" name="zuordnen" placeholder="?"></th>
+                <th class="spalte3">stellt ein Zeichen innerhalb des angegebenen Bereichs dar</th>
+            </tr>
+            <tr>
+                <th>C: _</th>
+                <th><input class="input1" type="text" id="E" name="zuordnen" placeholder="?"></th>
+                <th class="spalte3">die Zeichen, die in den Klammern stehen, dürfen nicht in die Lücke eingesetzt werden</th>
+            </tr>
+            <tr>
+                <th>D: -</th>
+                <th><input class="input1" type="text" id="A" name="zuordnen" placeholder="?"></th>
+                <th class="spalte3">es können alle Zeichen, welche in den Klammern stehen in die Lücke eingesetzt werden</th>
+            </tr>
+            <tr>
+                <th>E: [^]</th>
+                <th><input class="input1" type="text" id="C" name="zuordnen" placeholder="?"></th>
+                <th class="spalte3">steht für genau ein nicht vorhandenes Zeichen</th>
+            </tr>
+            </table>
+ 
+         </form>
+         <button id="submit10" onclick="parseSelectionText('zuordnen', 'submit10' ,['B', 'D', 'E', 'A', 'C'])">Submit</button>
+                <!--durch klicken des Buttons werden Lösungen kontrolliert -> Array zeigt Lösungen -->
+
+        <div class="buttoncontainer">       <!-- Erstellung eines Divs, welcher einen Start und einen HIlfe Button einbindet (wichtig für css....)-->
+                    <button class="auswerungsbutton" onclick="location.replace('auswertung.html')">Auswertung</button> <!--mit dem drücken des Start-Buttons wird in eine neue HTML-Datei gewechselt-->
+        </div>
+         
+         <div class="balkenunten">
+             <p class="abschlusstext"> Ausgearbeitet und erstellt von Lena Hoffmann und Lia Schneider 
+                 <br>
+                 im Rahmen der Komplexaufgabe des Informatikunterrichts 
+                 <br>
+                 der Klasse 12.
+             </p>
+         </div>
+    </body>
+</html>

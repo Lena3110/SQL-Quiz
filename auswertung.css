@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family:'Lato';
+    }
+.auswertung{
+    text-align: center;
+}
+.balkenoben {
+    background: rgb(16,41,2);
+    background: linear-gradient(90deg, rgba(16,41,2,1) 0%, rgba(9,121,24,1) 50%, rgba(79,222,108,1) 100%);
+    height: 125px;
+    padding-top: 35px;
+    margin-bottom: 30px;
+    padding-left: 20px;      
+}
+.balkenunten {
+    background: rgb(16,41,2);
+    background: linear-gradient(90deg, rgba(16,41,2,1) 0%, rgba(9,121,24,1) 50%, rgba(79,222,108,1) 100%);
+    height: 800px;
+    margin-top: 50px; 
+    text-align: center;
+}
+p{
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+hr{
+    color: white;
+}
+h1{
+    text-align: left;
+    font-size: 75px;
+    color: white;
+}
+.buttoncontainer{
+    text-align: center;
+
+}
+button{
+    
+    height: 100px;
+    width: 200px;
+    font-size: 20px;
+    margin: 20px;
+    transition: all 0.4s;
+}
+button:hover {
+    font-weight: 600;
+    color: white;
+    background-color: rgba(9,121,24,1);
+    border: none;
+}
