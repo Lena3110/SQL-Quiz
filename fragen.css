@@ -125,3 +125,12 @@ figcaption{
     margin-left: 70px;
     width: 30px;
 }
+.download a{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+.download{
+    margin-top: 20px;
+}
