@@ -34,7 +34,30 @@
    </figure>
   
         <h2>1. Single Choice</h2>
-        <h3>Bitte wählen Sie die richtigen Antworten aus. Es ist pro Frage immer genau eine Antwort richtig. Wenn Sie die Frage richtig beantwortet haben, erhöht sich ihr Punkte-Score um einen Punkt.</h3>
+        <h3>Bitte wählen Sie die richtigen Antworten aus. Es ist pro Frage immer genau eine Antwort richtig. 
+            Wenn Sie die Frage richtig beantwortet haben, erhöht sich ihr Punkte-Score um einen Punkt. 
+            Außerdem färbt sich das Feld, welches Sie ausgewählt haben nach dem Klicken des Submit-Buttons grün. 
+            Sollten Sie eine falsche Antwort ausgewählt haben, wird das richtige Feld grün und die falschen Felder rot.</h3>
+        <p class="fragestellung">Was bedeutet SQL ausgeschrieben eigentlich?</p>
+           
+        <form name="SQL">              
+            <!--Erstellung eines Containers mit jeweils einem Anklick-Element (radio), Beschriftung (label)-->
+            <div class="div">
+                <input class="input" type="radio" name="SQL" value="Ans1">
+                <label for="Ans1">Standard Quality Language</label>
+            </div>
+            <div class="div">
+                <input class="input" type="radio" name="SQL" value="Ans2">
+                <label for="Ans2">Structured Query Language</label><br>
+            </div>
+            <div class="div">
+                <input class="input" type="radio" name="SQL" value="Ans3">
+                <label for="Ans3">Selecting Quality Language</label>
+            </div>
+        </form>
+        <button id="submit1" onclick="parseSingleChoice('SQL', 'SQL', 'submit1' , 'Ans2')">Submit</button>
+            <!--durch das klicken des Submit BUttons, werden die Antworten der Form geprüft, Befehl in JS-Datei unter parseSingleChoice-->
+
         <p class="fragestellung">Mit welchem Befehl werden Einträge der Spalte "Medium" aus der Tabelle "Kunstwerk" ausgegeben?</p>
            
         <form name="formname">              
@@ -52,7 +75,7 @@
                 <label for="SELECT * FROM Medium Kunstwerk">SELECT * FROM Medium Kunstwerk</label>
             </div>
         </form>
-        <button id="submit1" onclick="parseSingleChoice('formname', 'select', 'submit1' , 'SELECTMediumFROMKunstwerk')">Submit</button>
+        <button id="submit2" onclick="parseSingleChoice('formname', 'select', 'submit2' , 'SELECTMediumFROMKunstwerk')">Submit</button>
             <!--durch das klicken des Submit BUttons, werden die Antworten der Form geprüft, Befehl in JS-Datei unter parseSingleChoice-->
        
        
@@ -79,7 +102,7 @@
                 <label for="ans4">…wird das LName, wo die Sprache Spanisch ist ausgegeben.</label>
             </div>
         </form>
-        <button id="submit2" onclick="parseSingleChoice('where', 'where', 'submit2' , 'ans4')">Submit</button>
+        <button id="submit3" onclick="parseSingleChoice('where', 'where', 'submit3' , 'ans4')">Submit</button>
 
 
        
@@ -103,7 +126,7 @@
                  <label for="MIN(1)">MIN(1)</label>
              </div>
          </form>
-         <button id="submit3" onclick="parseSingleChoice('or', 'or', 'submit3' , 'OR')">Submit</button></p>
+         <button id="submit4" onclick="parseSingleChoice('or', 'or', 'submit4' , 'OR')">Submit</button></p>
            
          
             <p class="fragestellung">Welcher Befehl löscht die komplette Tabelle?</p>
@@ -123,7 +146,7 @@
                 </div>
             
             </form>
-            <button id="submit4" onclick="parseSingleChoice('delete', 'delete', 'submit4' , 'DROPTABLE')">Submit</button></p>
+            <button id="submit5" onclick="parseSingleChoice('delete', 'delete', 'submit5' , 'DROPTABLE')">Submit</button></p>
               
             <p class="fragestellung">Welcher dieser Befehle kombiniert alle Datensätze miteinander?</p>
             
@@ -146,14 +169,110 @@
                 </div>
             
             </form>
-            <button id="submit5" onclick="parseSingleChoice('join', 'join', 'submit5' , 'FULLJOIN')">Submit</button></p>
+            <button id="submit6" onclick="parseSingleChoice('join', 'join', 'submit6' , 'FULLJOIN')">Submit</button></p>
+
+            <p class="fragestellung">Sie wollen die Daten der Spalten der Städte und der Mussennamen aus der Tabelle entnehmen und diese in eine neu anglegte Tabelle 'Städte' einfügen. Welchen Befehl sollten Sie nutzen?</p>
+            <form name="selectInto">
+                <div class="div">
+                    <input class="input" type="radio" name="selectInto" value="UPLOAD">
+                    <label for="UPLOAD">SELECT MOrt, MName FROM Museen UPLOAD INTO Städte</label>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="selectInto" value="PUTINTO">
+                    <label for="PUTINTO">SELECT MOrt, MName FROM Museen PUT INTO Städte</label><br>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="selectInto" value="SELECTINTO">
+                    <label for="SELECTINTO">SELECT MOrt, MName INTO Städte FROM Museen</label>
+                </div>
+            
+            </form>
+            <button id="submit7" onclick="parseSingleChoice('selectInto', 'selectInto', 'submit7' , 'SELECTINTO')">Submit</button></p>
+
+            <p class="fragestellung">Sie wollen in der Tabelle der Kunstwerke suchen, ob Sie überall ein Entstehungsjahr hinzugefügt haben. Welchen Befehl sollten Sie nutzen?</p>
+            
+            <form name="NULL">
+                <div class="div">
+                    <input class="input" type="radio" name="NULL" value="NULL">
+                    <label for="NULL">SELECT * FROM Kunstwerke WHERE Entstehungsjahr IS NULL</label>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="NULL" value="0">
+                    <label for="0">SELECT * FROM Kunstwerke WHERE Entstehungsjahr = 0</label><br>
+                </div>
+                           
+            </form>
+            <button id="submit8" onclick="parseSingleChoice('NULL', 'NULL', 'submit8' , 'NULL')">Submit</button></p>
+
+            <p class="fragestellung">Wenn Sie in der Tabelle der Kunstwerke kein Entstehungsjahr eingetragen wurde, soll 0 als Ersatzwert angezeigt werden. Welcher Befehl funktioniert für diese ANwendung in Microsoft Access?</p>
+            
+            <form name="ISNULL">
+                <div class="div">
+                    <input class="input" type="radio" name="ISNULL" value="ISNULL">
+                    <label for="ISNULL">SELECT KWName, ISNULL(Entstehungsjahr, 0) AS Entstehungsjahr FROM Kunstwerke</label>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="ISNULL" value="ISNULL2">
+                    <label for="ISNULL2">SELECT KWName, ISNULL(Entstehungsjahr= 0) AS Entstehungsjahr FROM Kunstwerke</label>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="IsNULL" value="IFNULL">
+                    <label for="IFNULL">>SELECT KWName, IFNULL(Entstehungsjahr, 0) AS Entstehungsjahr FROM Kunstwerke</label><br>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="ISNULL" value="IFFNULL">
+                    <label for="IFNULL2">>SELECT KWName, IFNULL(Entstehungsjahr = 0) AS Entstehungsjahr FROM Kunstwerke</label><br>
+                </div>           
+            </form>
+            <button id="submit9" onclick="parseSingleChoice('ISNULL', 'ISNULL', 'submit9' , 'ISNULL')">Submit</button></p>
+
+
+            <p class="fragestellung">Mit welchem Befehl können Sie eine Schleife durchlaufen lassen, welche prüft ob ein Kunstwerk in der Epoche des Expressionismus entstanden ist oder nicht.
+                                     Zusätzlich soll die Ausgabespalte 'Expressionismus JA / NEIN' benannt werden.
+            </p>
+            
+            <form name="exp">
+                <div class="div">
+                    <input class="input" type="radio" name="exp" value="CASE">
+                    <label for="CASE">SELECT * CASE
+                            WHEN Epoche = Expressionismus THEN 'JA' ELSE 'NEIN' END AS Expressionismus JA / NEIN FROM Kunstwerke</label>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="exp" value="IF">
+                    <label for="IF">SELECT * IF Epoche = Expressionismus THEN 'JA' ELSE 'NEIN'
+                    END AS Expressionismus JA / NEIN FROM Kunstwerke</label><br>
+                </div>
+                           
+            </form>
+            <button id="submit10" onclick="parseSingleChoice('exp', 'exp', 'submit10' , 'CASE')">Submit</button></p>
+
+            <p class="fragestellung">Funktioniert der folgende Befehl? 
+                <br>
+                INSERT INTO Kunstwerke SELECT * FROM Künstler
+
+            </p>
+
+            <form name="InsertIntoSelect">
+                <div class="div">
+                    <input class="input" type="radio" name="InsertIntoSelect" value="JA">
+                    <label for="JA">Ja.</label>
+                </div>
+                <div class="div">
+                    <input class="input" type="radio" name="InsertIntoSelect" value="NEIN">
+                    <label for="NEIN">Nein, da die Spalten der Quell- und Zieltabelle nicht übereinstimmen.</label><br>
+                </div>
+                           
+            </form>
+            <button id="submit11" onclick="parseSingleChoice('InsertIntoSelect', 'InsertIntoSelect', 'submit11' , 'NEIN')">Submit</button></p>
+
 
          <h2>2. Lückentext</h2>
          <h3 class="fragestellung">Füllen Sie die Lücken aus.
             <br>
             Bitte achten Sie dabei darauf, dass Sie alle Befehle in Großbuchstaben eingeben.
             <br>
-            Für jede richtig ausgefüllte Lücke wird zu ihrem Punktescore ein Punkt addiert.
+            Für jede richtig ausgefüllte Lücke wird zu ihrem Punktescore ein Punkt addiert und nach dem Klicken des Submit-Buttons färben sich diese Lücken grün. 
+            Bei falschen Antworten färbt sich Ihre EIngabe rot und es wird Ihnen in Klammern die richtige Lösung angezeigt.
          </h3>
          <form name="lückentext">
              <p class="lückentext">
@@ -184,14 +303,40 @@
                 SELECT * FROM Museen WHERE Land
                 <input class="input" type="text" id="lückentext" name="lückentext">
                 ('Deutschland', 'Frankreich')
+                <br>
+                <br>
+                Die Anzahl aller in der Museen-Tabelle eingetragenen Museen, deren Eintrittspreis niedriger als 12€ sind:
+                <br>
+                 SELECT
+                 <input class="input" type="text" id="lückentext" name="lückentext">
+                 (MID) FROM Museen WHERE Preis
+                 <input class="input" type="text" id="lückentext" name="lückentext">
+                 12
+                 <br>
+                 <br>
+                 Erstellen einer fertigen, gespeicherten Anweisung (Abrufen aller Datensätze der Ländertabelle), welche Sie mit einem Befehl abrufen können:
+                 <br>
+                 <input class="input" type="text" id="lückentext" name="lückentext">
+                 SelectAllLänder
+                 <input class="input" type="text" id="lückentext" name="lückentext">
+                 Select * From Länder
+                 <input class="input" type="text" id="lückentext" name="lückentext">
+                 <br>
+                 <br>
+                Abrufen der gespeicherten Anweisung:
+                <br>
+                <input class="input" type="text" id="lückentext" name="lückentext">
+                <input class="input" type="text" id="lückentext" name="lückentext">
              </p>
          </form>
-         <button id="submit6" onclick="parseGapText('lückentext', 'submit6' ,['INTO', 'VALUES', 'AVG', 'WHERE', 'LIKE', 'IN'])">Submit</button>
+         <button id="submit12" onclick="parseGapText('lückentext', 'submit12' ,['INTO', 'VALUES', 'AVG', 'WHERE', 'LIKE', 'IN', 'COUNT', '<', 'CREATE PROCEDURE', 'AS', 'GO', 'EXEC', 'SelectAllLänder'])">Submit</button>
                         <!--durch das klicken des Submit Buttons werden alle Eingaben überprüft -> Werte des Arrays sind die richtigen Eingaben-->
          
 
          <h2>3. Wahr-Falsch</h2>
-         <h3 class="fragestellung">Klicken Sie an ob die Aussagen wahr oder falsch sind. Für jedes richtig gesetzte Kreuz wird ihr Score um einen Punkt erhöht.</h3>
+         <h3 class="fragestellung">Klicken Sie an ob die Aussagen wahr oder falsch sind. Für jedes richtig gesetzte Kreuz wird ihr Score um einen Punkt erhöht.
+            Bei einer richtigen Auswahl färbt sich die Zeile nach dem Klicken des Submit-Buttons grün, wenn die Auswahl falsch ist, färbt sich die Zeile rot.
+         </h3>
          <form name="Wahr-Falsch" id="Wahr-Falsch">
             <table>     <!--Anlegen einer Tabelle-->
              <tr>       <!--Tabellenzeile-->
@@ -240,15 +385,38 @@
                 <th><input class="input" type="radio" name="wf8" value="true"></th>        
                 <th><input class="input" type="radio" name="wf8" value="false"></th>
             </tr>
+            <tr>
+                <th>Wenn Sie mit dem Befehl 'EXISTS' und der Bedingung, dass der Eintrittspreis des gesuchten Museums unter 4€ liegen soll, wird Ihnen als Antwort Russland ausgegeben. </th>
+                <th><input class="input" type="radio" name="wf9" value="true"></th>        
+                <th><input class="input" type="radio" name="wf9" value="false"></th>
+            </tr>
+            <tr>
+                <th>Sie können einen einzeiligen Kommentar durch die Zeichenkombination '--' und einen mehrzeiligen Kommentar durch die Zeichenkombination '/*  */'</th>
+                <th><input class="input" type="radio" name="wf10" value="true"></th>        
+                <th><input class="input" type="radio" name="wf10" value="false"></th>
+            </tr>
+            <tr>
+                <th>Wenn Sie mit dem Operator 'UNION' arbeiten wollen, müssen die SELECT-Auswahlen, welche Sie vereinigen wollen nicht zwingend die gleiche Anzahl an Spalten haben</th>
+                <th><input class="input" type="radio" name="wf11" value="true"></th>           
+                <th><input class="input" type="radio" name="wf11" value="false"></th>
+            </tr>
+            <tr>
+                <th>Es muss zwingend nach jedem SQL-Befehl ein Semikolon gesetzt werden.</th>
+                <th><input class="input" type="radio" name="wf12" value="true"></th>           
+                <th><input class="input" type="radio" name="wf12" value="false"></th>
+            </tr>
      </table>
  
          </form>
-         <button id="submit7" onclick="parseTrueFalse('Wahr-Falsch', ['wf1', 'wf2', 'wf3', 'wf4', 'wf5', 'wf6', 'wf7', 'wf8'], 'submit7' , ['true', 'true', 'false', 'false', 'true', 'false', 'true', 'false'])">Submit</button>
+         <button id="submit13" onclick="parseTrueFalse('Wahr-Falsch', ['wf1', 'wf2', 'wf3', 'wf4', 'wf5', 'wf6', 'wf7', 'wf8', 'wf9', 'wf10', 'wf11', 'w12'],
+                    'submit13' , ['true', 'true', 'false', 'false', 'true', 'false', 'true', 'false', 'false', 'true', 'false', 'false'])">Submit</button>
                 <!--durch klicken des buttons werden Lösungen kontrolliert -> Anlegung array-->
          
  
          <h2>4. Multiple Choice</h2>
-         <h3>Wählen Sie die richtigen Lösungen aus. Für jedes richtig gesetzte oder richtig nicht gesetzte Kreuz erhöht sich Ihr Score um einen halben Punkt.</h3>
+         <h3>Wählen Sie die richtigen Lösungen aus. Für jedes richtig gesetzte oder richtig nicht gesetzte Kreuz erhöht sich Ihr Score um einen halben Punkt 
+            und das Auswahlfeld färbt sich nach dem Anklicken des Submit-Buttons grün. 
+            Falls Sie ein Feld falsch ausgewählt haben oder falsch nicht ausgewählt haben, färbt sich dieses nach dem Klicken des Buttons rot.</h3>
          <p class="fragestellung">Wie kann man sich alle Datensätze aus der Tabelle "Künstler" alphabetisch nach "KName" angeben lassen?</p>
             
          <form name="question8">
@@ -273,7 +441,7 @@
                 <label>SELECT KID, KName, Kunstwerk, Geburtstjahr, Todesjahr, Nationalität FROM Künstler ORDER BY KName DESC</label>
             </div>
          </form>
-         <button id="submit8" onclick="parseMultipleChoice('question8', 'submit8' , [true, false, true, true, true])">Submit</button>
+         <button id="submit14" onclick="parseMultipleChoice('question8', 'submit14' , [true, false, true, true, true])">Submit</button>
                 <!--durch klicken des BUttons werden Lösungen überprüft, Array definiert Lösungen-->
 
          <p class="fragestellung">Wie kann man sich den höchsten Preis der Museen anzeigen lassen?</p> 
@@ -291,13 +459,88 @@
                  <label>SELECT HIGHEST FROM Künstler ORDER BY Preis</label>
              </div>
          </form>
-         <button id="submit9" onclick="parseMultipleChoice('multiplechoice2', 'submit9' , [true, true, false,])">Submit</button>
+         <button id="submit14" onclick="parseMultipleChoice('multiplechoice2', 'submit14' , [true, true, false,])">Submit</button>
+
+         <p class="fragestellung">Sie wollen ein Land bereisen, in welchem die Einwohnerzahl zwischen 20 Millionen und 60 Millionen liegt, welche Befehle können Sie anwenden um dies heraus zu finden?</p> 
+         <form name="multiplechoice3">
+             <div class="div">
+                 <input class="input" type="checkbox" value="A">
+                 <label>SELECT * FROM Länder WHERE Einwohnerzahl BETWEEN 20 and 60</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="checkbox" value="B">
+                 <label>SELECT * FROM Länder WHERE Einwohnerzahl &gt 20 AND Einwohnerzahl &lt 60</label>
+             </div>
+             <div class="div">
+                <input class="input" type="checkbox" value="C">
+                <label>SELECT * FROM Länder WHERE Einwohnerzahl &lt 60 AND Einwohnerzahl &gt 20</label>
+            </div>
+             <div class="div">
+                 <input class="input" type="checkbox" value="C">
+                 <label>SELECT * FROM Länder WHERE Einwohnerzahl &lt 20 AND Einwohnerzahl &gt 60</label>
+             </div>
+         </form>
+         <button id="submit15" onclick="parseMultipleChoice('multiplechoice3', 'submit15' , [true, true, true, false,])">Submit</button>
+
          
+         <p class="fragestellung">Sie wollen statt dem Albertinum die 'Staatlichen Kunstsammlungen Dresden' in die Tabelle Museen eintragen, 
+            welche Befehle können Sie nutzen? </p> 
+         <form name="multiplechoice4">
+            <div class="div">
+                 <input class="input" type="checkbox" value="C">
+                 <label>UPDATE Museen SET MName = Staatlichen Kunstsammlungen Dresden WHERE Kunstwerk = Taumelnder Mann</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="checkbox" value="A">
+                 <label>UPDATE Museen SET MName = Staatlichen Kunstsammlungen Dresden WHERE MID = 1</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="checkbox" value="B">
+                 <label>UPDATE Museen SET MName = Staatlichen Kunstsammlungen Dresden WHERE Gründungsjahr = 1965</label>
+             </div>
+
+         </form>
+         <button id="submit16" onclick="parseMultipleChoice('multiplechoice4', 'submit16' , [false, true, true,])">Submit</button>
+         
+         <p class="fragestellung">Mit welchen Befehlen können Sie herausfinden, aus welchen Ländern mindestens 2 Künstler stammen und diese nach der Anzahl der Künstler absteigend ordnen?</p> 
+         <form name="multiplechoice5">
+            <div class="div">
+                 <input class="input" type="checkbox" value="C">
+                 <label>SELECT COUNT(Nationalität), KName, KID
+                    FROM Künstler
+                    GROUP BY Nationalität
+                    HAVING COUNT(Nationalität) > 2
+                    ORDER BY COUNT(Nationalität) ASC</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="checkbox" value="A">
+                 <label>SELECT COUNT(Nationalität), KName, KID
+                    FROM Künstler
+                    GROUP BY Nationalität
+                    HAVING COUNT(Nationalität) > 2
+                    ORDER BY COUNT(Nationalität) DESC</label>
+             </div>
+             <div class="div">
+                 <input class="input" type="checkbox" value="B">
+                 <label>SELECT COUNT(Nationalität), KName, KID
+                    FROM Künstler
+                    GROUP BY Nationalität
+                    WHERE COUNT(Nationalität) > 2
+                    ORDER BY COUNT(Nationalität) DESC</label>
+             </div>
+
+         </form>
+         <button id="submit17" onclick="parseMultipleChoice('multiplechoice5', 'submit17' , [false, true, false])">Submit</button></label>
+       
+
+
+
          <h2>5. Zuordnen</h2>
          <h3 class="fragestellung">Bitte ordnen Sie der Antwort der 3. Spalte den richtigen Partner zu indem Sie den Buchstaben, welcher vor der richtigen Antwort in der ersten Spalte steht in das Eingabefeld (Spalte 2) vor die richtige Antwort der 3. Spalte schreiben.
             <br> In der Aufgabe werden die allgemeinen Wildcards abgefragt, auch wenn Microsoft Access teilweise andere Symbole unterstützt. 
             <br>
-            Für jede richtige Zuordnung erhöht sich Ihr Punktestand um einen Punkt.
+            Für jede richtige Zuordnung erhöht sich Ihr Punktestand um einen Punkt und nach dem Klicken des Submit-Buttons färbt sich Ihre Eingabe grün. 
+            Falsch Ihre Eingabe doch falsch sein sollte, färbt sie sich rot und die richtige Lösung wird in Klammern eingezeigt.
          </h3>
          <form name="zuordnen" id="zuordnen">
             <table>     <!--Anlegen einer Tabelle-->
@@ -335,7 +578,7 @@
             </table>
  
          </form>
-         <button id="submit10" onclick="parseSelectionText('zuordnen', 'submit10' ,['B', 'D', 'E', 'A', 'C'])">Submit</button>
+         <button id="submit18" onclick="parseSelectionText('zuordnen', 'submit18' ,['B', 'D', 'E', 'A', 'C'])">Submit</button>
                 <!--durch klicken des Buttons werden Lösungen kontrolliert -> Array zeigt Lösungen -->
 
         <div class="buttoncontainer">       <!-- Erstellung eines Divs, welcher einen Start und einen HIlfe Button einbindet (wichtig für css....)-->
