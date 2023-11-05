@@ -14,9 +14,17 @@
             <hr>
         </div>
     <div class="erklärung">
-        <p>Das gesamte Quiz baut auf unserer Datenbank zum Thema Kunst auf. Diese Datenbank wird zum lösen der meisten Aufgaben zwingend benötigt. Bitte öffnen Sie diese bevor Sie das Quiz starten.
+        <p>Das gesamte Quiz baut auf unserer Datenbank zum Thema Kunst auf. Diese Datenbank wird zum lösen der meisten Aufgaben zwingend benötigt. 
+            <br>
+            Bitte öffnen Sie diese bevor Sie das Quiz starten.
         </p>        <!--Erklärungstext-->
-        <button class="download"><a href="Datenbank Kunst.accdb"download>Download Datenbank</a></button>
+        <button class="download"><a href="Datenbank Kunst.accdb"download>Download Datenbank</a></button>    <!--Einbindung eines Downloadlinks in einen Button für die Datenbank-->
+        <p> Sie können Ihre Lösungen der Fragen erst abschicken, wenn in der jeweiligen Frage alle Lücken ausgefüllt wurden
+            <br>
+            beziehungsweise mindestens eine Auswahl je Fragestellung getroffen wurde.
+            <br>
+            Während Sie das Quiz lösen, wird Ihr Punktescore automatisch ausgerechnet und Sie können diesen dann auf der Auswertungsseite sehen.
+        </p>
     </div>
     <figure>   <!--Bild ERM-Kunst.png wird eingebunden, soll die Breite der Seite komplett ausfüllen, figcaption: Bildunterschrift-->
         <div class="figures">
@@ -36,6 +44,7 @@
        
    
         <h2>1. Single Choice</h2>
+        <h3>Bitte wählen Sie die richtigen Antworten aus. Es ist pro Frage immer genau eine Antwort richtig. Wenn Sie die Frage richtig beantwortet haben, erhöht sich ihr Punkte-Score um einen Punkt.</h3>
         <p class="fragestellung">Mit welchem Befehl werden Einträge der Spalte "Medium" aus der Tabelle "Kunstwerk" ausgegeben?</p>
            
         <form name="formname">              
@@ -150,10 +159,12 @@
             <button id="submit5" onclick="parseSingleChoice('join', 'join', 'submit5' , 'FULLJOIN')">Submit</button></p>
 
          <h2>2. Lückentext</h2>
-         <p class="fragestellung">Füllen Sie die Lücken aus.
+         <h3 class="fragestellung">Füllen Sie die Lücken aus.
             <br>
             Bitte achten Sie dabei darauf, dass Sie alle Befehle in Großbuchstaben eingeben.
-         </p>
+            <br>
+            Für jede richtig ausgefüllte Lücke wird zu ihrem Punktescore ein Punkt addiert.
+         </h3>
          <form name="lückentext">
              <p class="lückentext">
                 Eintragen neuer Werte in die Tabelle: <br>
@@ -189,7 +200,7 @@
          
 
          <h2>3. Wahr-Falsch</h2>
-         <p class="fragestellung">Klicken Sie an ob die Aussagen wahr oder falsch sind.</p>
+         <h3 class="fragestellung">Klicken Sie an ob die Aussagen wahr oder falsch sind. Für jedes richtig gesetzte Kreuz wird ihr Score um einen Punkt erhöht.</h3>
          <form name="Wahr-Falsch" id="Wahr-Falsch">
             <table>     <!--Anlegen einer Tabelle-->
              <tr>       <!--Tabellenzeile-->
@@ -246,7 +257,7 @@
          
  
          <h2>4. Multiple Choice</h2>
-         <p>Wählen Sie die richtigen Lösungen aus.</p>
+         <h3>Wählen Sie die richtigen Lösungen aus. Für jedes richtig gesetzte oder richtig nicht gesetzte Kreuz erhöht sich Ihr Score um einen halben Punkt.</h3>
          <p class="fragestellung">Wie kann man sich alle Datensätze aus der Tabelle "Künstler" alphabetisch nach "KName" angeben lassen?</p>
             
          <form name="question8">
@@ -292,9 +303,11 @@
          <button id="submit9" onclick="parseMultipleChoice('multiplechoice2', 'submit9' , [true, true, false,])">Submit</button>
          
          <h2>5. Zuordnen</h2>
-         <p class="fragestellung">Bitte ordnen Sie der Antwort der 3. Spalte den richtigen Partner zu indem Sie den Buchstaben, welcher vor der richtigen Antwort in der ersten Spalte steht in das Eingabefeld (Spalte 2) vor die richtige Antwort der 3. Spalte schreiben.
+         <h3 class="fragestellung">Bitte ordnen Sie der Antwort der 3. Spalte den richtigen Partner zu indem Sie den Buchstaben, welcher vor der richtigen Antwort in der ersten Spalte steht in das Eingabefeld (Spalte 2) vor die richtige Antwort der 3. Spalte schreiben.
             <br> In der Aufgabe werden die allgemeinen Wildcards abgefragt, auch wenn Microsoft Access teilweise andere Symbole unterstützt. 
-         </p>
+            <br>
+            Für jede richtige Zuordnung erhöht sich Ihr Punktestand um einen Punkt.
+         </h3>
          <form name="zuordnen" id="zuordnen">
             <table>     <!--Anlegen einer Tabelle-->
              <tr>

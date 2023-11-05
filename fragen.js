@@ -114,7 +114,7 @@ function parseSelectionText(formName, submitID, correctAnswers) {
         if (inputs[i].value == correctAnswers[i]) {
             inputs[i].style.color = "rgba(9,121,24,1)"
             inputs[i].disabled = true               // durchgehen des Arrays, bei Übereinstimmunen grün-, bei falscher Eingabe rotfärbung
-            score += 1
+            score += 1                              //der Score wird im Localstorage um 1 erhöht
         } else {
             inputs[i].style.color = "red"
             inputs[i].value += ' ('+ correctAnswers[i] +')'
