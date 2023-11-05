@@ -51,7 +51,7 @@ function parseGapText(formName, submitID, correctAnswers) {
 
     for (let i = 0; i < answers.length; i++) {      // geht Array durch
         if (inputs[i].value == correctAnswers[i]) {
-            score += 1
+            score += 1                              // je richtig ausgefüllte Lücke wird der Score im Localstorage um einen Punkt hochgesetzt
             inputs[i].style.color = "rgba(9,121,24,1)"
             inputs[i].disabled = true           // wenn richtige Antwort, grünfärbung und deaktivierung
         } else {
