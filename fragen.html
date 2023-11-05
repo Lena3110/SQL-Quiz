@@ -165,13 +165,13 @@
                  ('21', 'Secret Art', 'Lichtenstein', '14')
                  <br>
                  <br>
-                Durchschnitt bilden: <br>
+                Durchschnitt der Preise bilden: <br>
                 SELECT 
                  <input class="input" type="text" id="lückentext" name="lückentext">
                  (Preis) FROM Museen 
                 <br>
                 <br>
-                Künstler, die mit "A" <br>
+                Künstler, deren Namen mit "A" beginnen: <br>
                 SELECT * FROM Künstler
                 <input class="input" type="text" id="lückentext" name="lückentext">
                KName
@@ -180,6 +180,7 @@
                <br>
                <br>
                Alle Museen, die in Deutschland oder Frankreich liegen:
+               <br>
                 SELECT * FROM Museen WHERE Land
                 <input class="input" type="text" id="lückentext" name="lückentext">
                 ('Deutschland', 'Frankreich')
