@@ -71,7 +71,7 @@ function parseTrueFalse(formName, formValueNames, submitID, correctAnswers) {
     let inputs = document.querySelectorAll("form[name="+formName+"] input")     // Definition der Variablen
     for (valueName of formValueNames) {
         answers.push(document.forms[formName][valueName].value)     // HInzufügen der Antworten in Array
-    }
+    }                                                                         
     if (answers.includes('')) {
         alert('Bitte geben Sie erst alle Antworten ab!')        
         return

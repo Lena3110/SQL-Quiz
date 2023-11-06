@@ -14,7 +14,7 @@
             <hr>
         </div>
     <div class="erklärung">
-        <p>Das gesamte Quiz baut auf unserer Datenbank zum Thema Kunst auf. Diese Datenbank wird zum lösen der meisten Aufgaben zwingend benötigt. 
+        <p>Das gesamte Quiz baut auf unserer Datenbank zum Thema Kunst auf. Diese Datenbank wird zum Lösen der meisten Aufgaben zwingend benötigt. 
             <br>
             Bitte öffnen Sie diese bevor Sie das Quiz starten.
         </p>        <!--Erklärungstext-->
@@ -35,10 +35,10 @@
   
         <h2>1. Single Choice</h2>
         <h3>Bitte wählen Sie die richtigen Antworten aus. Es ist pro Frage immer genau eine Antwort richtig. 
-            Wenn Sie die Frage richtig beantwortet haben, erhöht sich ihr Punkte-Score um einen Punkt. 
+            Wenn Sie die Frage richtig beantwortet haben, erhöht sich ihr Punktescore um einen Punkt. 
             Außerdem färbt sich das Feld, welches Sie ausgewählt haben nach dem Klicken des Submit-Buttons grün. 
             Sollten Sie eine falsche Antwort ausgewählt haben, wird das richtige Feld grün und die falschen Felder rot.</h3>
-        <p class="fragestellung">Was bedeutet SQL ausgeschrieben eigentlich?</p>
+        <p class="fragestellung">Was bedeutet SQL ausgeschrieben?</p>
            
         <form name="SQL">              
             <!--Erstellung eines Containers mit jeweils einem Anklick-Element (radio), Beschriftung (label)-->
@@ -58,7 +58,7 @@
         <button id="submit1" onclick="parseSingleChoice('SQL', 'SQL', 'submit1' , 'Ans2')">Submit</button>
             <!--durch das klicken des Submit BUttons, werden die Antworten der Form geprüft, Befehl in JS-Datei unter parseSingleChoice-->
 
-        <p class="fragestellung">Mit welchem Befehl werden Einträge der Spalte "Medium" aus der Tabelle "Kunstwerk" ausgegeben?</p>
+        <p class="fragestellung">Mit welchem Befehl werden die Einträge der Spalte "Medium" aus der Tabelle "Kunstwerk" ausgegeben?</p>
            
         <form name="formname">              
             <!--Erstellung eines Containers mit jeweils einem Anklick-Element (radio), Beschriftung (label)-->
@@ -82,12 +82,12 @@
 
 
        
-       <p class="fragestellung">Beim Befehl "SELECT LName FROM Land WHERE Sprache = `Spanisch`" …</p>
+       <p class="fragestellung">Bei dem Befehl "SELECT LName FROM Land WHERE Sprache = 'Spanisch'" …</p>
            
         <form name="where">
             <div class="div">
                 <input class="input" type="radio" name="where" value="ans1">
-                <label for="ans1"></label>…wird das LName, wo die Sprache nicht Spanisch ist ausgegeben.</label>
+                <label for="ans1"></label>…wird der LName der Länder in denen nicht Spanisch gesprochen wird ausgegeben.</label>
             </div>
             <div class="div">
                 <input class="input" type="radio" name="where" value="ans2">
@@ -99,7 +99,7 @@
             </div>
             <div class="div">
                 <input class="input" type="radio" name="where" value="ans4">
-                <label for="ans4">…wird das LName, wo die Sprache Spanisch ist ausgegeben.</label>
+                <label for="ans4">…wird der LName der Länder in denen Spanisch gesprochen wird ausgegeben.</label>
             </div>
         </form>
         <button id="submit3" onclick="parseSingleChoice('where', 'where', 'submit3' , 'ans4')">Submit</button>
@@ -171,7 +171,7 @@
             </form>
             <button id="submit6" onclick="parseSingleChoice('join', 'join', 'submit6' , 'FULLJOIN')">Submit</button></p>
 
-            <p class="fragestellung">Sie wollen die Daten der Spalten der Städte und der Mussennamen aus der Tabelle entnehmen und diese in eine neu anglegte Tabelle 'Städte' einfügen. Welchen Befehl sollten Sie nutzen?</p>
+            <p class="fragestellung">Sie wollen die Daten der Spalten 'MOrt' und der 'MName' aus der Tabelle 'Museen' entnehmen und diese in eine neu anglegte Tabelle 'Städte' einfügen. Welchen Befehl sollten Sie nutzen?</p>
             <form name="selectInto">
                 <div class="div">
                     <input class="input" type="radio" name="selectInto" value="UPLOAD">
@@ -204,7 +204,7 @@
             </form>
             <button id="submit8" onclick="parseSingleChoice('NULL', 'NULL', 'submit8' , 'NULL')">Submit</button></p>
 
-            <p class="fragestellung">Wenn Sie in der Tabelle der Kunstwerke kein Entstehungsjahr eingetragen wurde, soll 0 als Ersatzwert angezeigt werden. Welcher Befehl funktioniert für diese ANwendung in Microsoft Access?</p>
+            <p class="fragestellung">Wenn Sie in der Tabelle der Kunstwerke kein Entstehungsjahr eingetragen haben, soll 0 als Ersatzwert angezeigt werden. Welcher Befehl funktioniert für diese Anwendung in Microsoft Access?</p>
             
             <form name="ISNULL">
                 <div class="div">
@@ -235,12 +235,12 @@
                 <div class="div">
                     <input class="input" type="radio" name="exp" value="CASE">
                     <label for="CASE">SELECT * CASE
-                            WHEN Epoche = Expressionismus THEN 'JA' ELSE 'NEIN' END AS Expressionismus JA / NEIN FROM Kunstwerke</label>
+                            WHEN Epoche = 'Expressionismus' THEN 'JA' ELSE 'NEIN' END AS 'Expressionismus JA / NEIN' FROM Kunstwerke</label>
                 </div>
                 <div class="div">
                     <input class="input" type="radio" name="exp" value="IF">
-                    <label for="IF">SELECT * IF Epoche = Expressionismus THEN 'JA' ELSE 'NEIN'
-                    END AS Expressionismus JA / NEIN FROM Kunstwerke</label><br>
+                    <label for="IF">SELECT * IF Epoche = 'Expressionismus' THEN 'JA' ELSE 'NEIN'
+                    END AS 'Expressionismus JA / NEIN' FROM Kunstwerke</label><br>
                 </div>
                            
             </form>
@@ -267,12 +267,12 @@
 
 
          <h2>2. Lückentext</h2>
-         <h3 class="fragestellung">Füllen Sie die Lücken aus.
+         <h3 class="fragestellung">Füllen Sie die Lücken aus. Beachten Sie, dass einige Befehle mehrere Wörter enthalten und wenn diese direkt hintereinander stehen nur eine Lücke für sie vorgesehen ist.
             <br>
             Bitte achten Sie dabei darauf, dass Sie alle Befehle in Großbuchstaben eingeben.
             <br>
             Für jede richtig ausgefüllte Lücke wird zu ihrem Punktescore ein Punkt addiert und nach dem Klicken des Submit-Buttons färben sich diese Lücken grün. 
-            Bei falschen Antworten färbt sich Ihre EIngabe rot und es wird Ihnen in Klammern die richtige Lösung angezeigt.
+            Bei falschen Antworten färbt sich Ihre Eingabe rot und es wird Ihnen in Klammern die richtige Lösung angezeigt.
          </h3>
          <form name="lückentext">
              <p class="lückentext">
@@ -305,7 +305,7 @@
                 ('Deutschland', 'Frankreich')
                 <br>
                 <br>
-                Die Anzahl aller in der Museen-Tabelle eingetragenen Museen, deren Eintrittspreis niedriger als 12€ sind:
+                Die Anzahl aller in der Museen-Tabelle eingetragenen Museen, deren Eintrittspreis niedriger als 12€ ist:
                 <br>
                  SELECT
                  <input class="input" type="text" id="lückentext" name="lückentext">
@@ -314,7 +314,7 @@
                  12
                  <br>
                  <br>
-                 Erstellen einer fertigen, gespeicherten Anweisung (Abrufen aller Datensätze der Ländertabelle), welche Sie mit einem Befehl abrufen können:
+                 Erstellen einer fertigen, gespeicherten Anweisung (Abrufen aller Datensätze der Ländertabelle), welche mit einem Befehl abgerufen werden kann:
                  <br>
                  <input class="input" type="text" id="lückentext" name="lückentext">
                  SelectAllLänder
@@ -346,37 +346,37 @@
              </tr>
          
              <tr>
-                 <th>Bei SELECT DISTINCT werden nur unterschiedliche Werte ausgegeben.</th>
+                 <th>Bei "SELECT DISTINCT" werden nur unterschiedliche Werte ausgegeben.</th>
                  <th><input class="input" type="radio" name="wf1" value="true"></th>            <!--Erstellung eines klickbaren Elements-->
                  <th><input class="input" type="radio" name="wf1" value="false"></th>
              </tr>
              <tr>
-                 <th>AND wird eingesetzt, wenn alle Aussagen wahr sein müssen und ANY, wenn mindestens eine Aussage wahr sein muss.</th>
+                 <th>"AND" wird eingesetzt, wenn alle Aussagen wahr sein müssen und "ANY", wenn mindestens eine Aussage wahr sein muss.</th>
                  <th><input class="input" type="radio" name="wf2" value="true"></th>
                  <th><input class="input" type="radio" name="wf2" value="false"></th>
              </tr>
              <tr>
-                <th>INNER JOIN gibt Zeilen, die nicht übereinstimmen aus beiden Tabellen aus.</th>
+                <th>"INNER JOIN" gibt Zeilen, die nicht übereinstimmen aus beiden Tabellen aus.</th>
                 <th><input class="input" type="radio" name="wf3" value="true"></th>
                 <th><input class="input" type="radio" name="wf3" value="false"></th>
             </tr>
             <tr>
-               <th>RIGHT JOIN gibt Zeilen die TRUE sind aus.</th>
+               <th>"RIGHT JOIN" gibt Zeilen die TRUE sind aus.</th>
                <th><input class="input" type="radio" name="wf4" value="true"></th>
                <th><input class="input" type="radio" name="wf4" value="false"></th>
            </tr>
            <tr>
-               <th>LEFT JOIN gibt alle Zeilen aus der linken Tabelle und die übereinstimmenden Zeilen aus der rechten Tabelle aus</th>
+               <th>"LEFT JOIN" gibt alle Zeilen aus der linken Tabelle und die übereinstimmenden Zeilen aus der rechten Tabelle aus</th>
                <th><input class="input" type="radio" name="wf5" value="true"></th>
                <th><input class="input" type="radio" name="wf5" value="false"></th>
-           </tr>
+             </tr>
            <tr>
-            <th>FULL JOIN  ist kein SQL-Befehl.</th>
-            <th><input class="input" type="radio" name="wf6" value="true"></th>
-            <th><input class="input" type="radio" name="wf6" value="false"></th>
+                <th>"FULL JOIN"  ist kein SQL-Befehl.</th>
+                <th><input class="input" type="radio" name="wf6" value="true"></th>
+                <th><input class="input" type="radio" name="wf6" value="false"></th>
             </tr>
             <tr>
-                <th>SELF JOIN verknüpft eine Tabelle mit sich selbst.</th>
+                <th>"SELF JOIN" verknüpft eine Tabelle mit sich selbst.</th>
                 <th><input class="input" type="radio" name="wf7" value="true"></th>
                 <th><input class="input" type="radio" name="wf7" value="false"></th>
             </tr>
@@ -386,17 +386,17 @@
                 <th><input class="input" type="radio" name="wf8" value="false"></th>
             </tr>
             <tr>
-                <th>Wenn Sie mit dem Befehl 'EXISTS' und der Bedingung, dass der Eintrittspreis des gesuchten Museums unter 4€ liegen soll, wird Ihnen als Antwort Russland ausgegeben. </th>
+                <th>Wenn Sie mit dem Befehl "EXISTS" und der Bedingung, dass der Eintrittspreis des gesuchten Museums unter 4€ liegen soll, wird Ihnen als Antwort Russland ausgegeben. </th>
                 <th><input class="input" type="radio" name="wf9" value="true"></th>        
                 <th><input class="input" type="radio" name="wf9" value="false"></th>
             </tr>
             <tr>
-                <th>Sie können einen einzeiligen Kommentar durch die Zeichenkombination '--' und einen mehrzeiligen Kommentar durch die Zeichenkombination '/*  */'</th>
+                <th>Sie können einen einzeiligen Kommentar durch die Zeichenkombination "--" und einen mehrzeiligen Kommentar durch die Zeichenkombination "/*  */" kennzeichnen.</th>
                 <th><input class="input" type="radio" name="wf10" value="true"></th>        
                 <th><input class="input" type="radio" name="wf10" value="false"></th>
             </tr>
             <tr>
-                <th>Wenn Sie mit dem Operator 'UNION' arbeiten wollen, müssen die SELECT-Auswahlen, welche Sie vereinigen wollen nicht zwingend die gleiche Anzahl an Spalten haben</th>
+                <th>Wenn Sie mit dem Operator "UNION" arbeiten wollen, müssen die SELECT-Auswahlen, welche Sie vereinigen wollen nicht zwingend die gleiche Anzahl an Spalten haben</th>
                 <th><input class="input" type="radio" name="wf11" value="true"></th>           
                 <th><input class="input" type="radio" name="wf11" value="false"></th>
             </tr>
@@ -408,15 +408,15 @@
      </table>
  
          </form>
-         <button id="submit13" onclick="parseTrueFalse('Wahr-Falsch', ['wf1', 'wf2', 'wf3', 'wf4', 'wf5', 'wf6', 'wf7', 'wf8', 'wf9', 'wf10', 'wf11', 'w12'],
-                    'submit13' , ['true', 'true', 'false', 'false', 'true', 'false', 'true', 'false', 'false', 'true', 'false', 'false'])">Submit</button>
+         <button id="submit13" onclick="parseTrueFalse('Wahr-Falsch', ['wf1', 'wf2', 'wf3', 'wf4', 'wf5', 'wf6', 'wf7', 'wf8', 'wf9', 'wf10', 'wf11', 'wf12'], 
+         'submit13', ['true', 'true', 'false', 'false', 'true', 'false', 'true', 'false', 'false', 'true', 'false', 'false'])">Submit</button>
                 <!--durch klicken des buttons werden Lösungen kontrolliert -> Anlegung array-->
          
  
          <h2>4. Multiple Choice</h2>
          <h3>Wählen Sie die richtigen Lösungen aus. Für jedes richtig gesetzte oder richtig nicht gesetzte Kreuz erhöht sich Ihr Score um einen halben Punkt 
             und das Auswahlfeld färbt sich nach dem Anklicken des Submit-Buttons grün. 
-            Falls Sie ein Feld falsch ausgewählt haben oder falsch nicht ausgewählt haben, färbt sich dieses nach dem Klicken des Buttons rot.</h3>
+            Falls Sie ein Feld falsch ausgewählt haben oder falsch nicht ausgewählt haben, färbt sich dieses Feld nach dem Klicken des Buttons rot.</h3>
          <p class="fragestellung">Wie kann man sich alle Datensätze aus der Tabelle "Künstler" alphabetisch nach "KName" angeben lassen?</p>
             
          <form name="question8">
@@ -540,7 +540,7 @@
             <br> In der Aufgabe werden die allgemeinen Wildcards abgefragt, auch wenn Microsoft Access teilweise andere Symbole unterstützt. 
             <br>
             Für jede richtige Zuordnung erhöht sich Ihr Punktestand um einen Punkt und nach dem Klicken des Submit-Buttons färbt sich Ihre Eingabe grün. 
-            Falsch Ihre Eingabe doch falsch sein sollte, färbt sie sich rot und die richtige Lösung wird in Klammern eingezeigt.
+            Falls Ihre Eingabe doch falsch sein sollte, färbt sie sich rot und die richtige Lösung wird in Klammern eingezeigt.
          </h3>
          <form name="zuordnen" id="zuordnen">
             <table>     <!--Anlegen einer Tabelle-->
