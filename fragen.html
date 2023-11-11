@@ -23,21 +23,21 @@
             <br>
             beziehungsweise mindestens eine Auswahl je Fragestellung getroffen wurde.
             <br>
-            Während Sie das Quiz lösen, wird Ihr Punktescore automatisch ausgerechnet und Sie können diesen dann auf der Auswertungsseite sehen.
+            Während Sie das Quiz lösen, wird Ihr Punktescore automatisch berechnet und Sie können diesen dann auf der Auswertungsseite sehen.
         </p>
     </div>
     <figure>   <!--Bild ERM-Kunst.png wird eingebunden, soll die Breite der Seite komplett ausfüllen, figcaption: Bildunterschrift-->
         <div class="figures">
             <img src="ERM-Kunst.png" width="95%">
         </div>
-        <figcaption>Abbildung 1: Das ERM der Datenbank</figcaption>
+        <figcaption>Abbildung 1: Das Entity-Relationship-Modell (ERM) der Datenbank</figcaption>
    </figure>
   
         <h2>1. Single Choice</h2>
         <h3>Bitte wählen Sie die richtigen Antworten aus. Es ist pro Frage immer genau eine Antwort richtig. 
             Wenn Sie die Frage richtig beantwortet haben, erhöht sich ihr Punktescore um einen Punkt. 
-            Außerdem färbt sich das Feld, welches Sie ausgewählt haben nach dem Klicken des Submit-Buttons grün. 
-            Sollten Sie eine falsche Antwort ausgewählt haben, wird das richtige Feld grün und die falschen Felder rot.</h3>
+            Außerdem färbt sich das Feld, welches Sie ausgewählt haben, nach dem Klicken des Submit-Buttons grün. 
+            Sollten Sie eine falsche Antwort ausgewählt haben, wird das richtige Feld grün und die falschen Felder werden rot.</h3>
         <p class="fragestellung">Was bedeutet SQL ausgeschrieben?</p>
            
         <form name="SQL">              
@@ -91,7 +91,7 @@
             </div>
             <div class="div">
                 <input class="input" type="radio" name="where" value="ans2">
-                <label for="ans2">…wird Fehler gemeldet.</label><br>
+                <label for="ans2">…wird ein Fehler gemeldet.</label><br>
             </div>
             <div class="div">
                 <input class="input" type="radio" name="where" value="ans3">
@@ -171,7 +171,7 @@
             </form>
             <button id="submit6" onclick="parseSingleChoice('join', 'join', 'submit6' , 'FULLJOIN')">Submit</button></p>
 
-            <p class="fragestellung">Sie wollen die Daten der Spalten 'MOrt' und der 'MName' aus der Tabelle 'Museen' entnehmen und diese in eine neu anglegte Tabelle 'Städte' einfügen. Welchen Befehl sollten Sie nutzen?</p>
+            <p class="fragestellung">Sie wollen die Daten der Spalten 'MOrt' und 'MName' aus der Tabelle 'Museen' entnehmen und diese in eine neu anglegte Tabelle 'Städte' einfügen. Welchen Befehl sollten Sie nutzen?</p>
             <form name="selectInto">
                 <div class="div">
                     <input class="input" type="radio" name="selectInto" value="UPLOAD">
@@ -217,18 +217,18 @@
                 </div>
                 <div class="div">
                     <input class="input" type="radio" name="IsNULL" value="IFNULL">
-                    <label for="IFNULL">>SELECT KWName, IFNULL(Entstehungsjahr, 0) AS Entstehungsjahr FROM Kunstwerke</label><br>
+                    <label for="IFNULL">SELECT KWName, IFNULL(Entstehungsjahr, 0) AS Entstehungsjahr FROM Kunstwerke</label><br>
                 </div>
                 <div class="div">
                     <input class="input" type="radio" name="ISNULL" value="IFFNULL">
-                    <label for="IFNULL2">>SELECT KWName, IFNULL(Entstehungsjahr = 0) AS Entstehungsjahr FROM Kunstwerke</label><br>
+                    <label for="IFNULL2">SELECT KWName, IFNULL(Entstehungsjahr = 0) AS Entstehungsjahr FROM Kunstwerke</label><br>
                 </div>           
             </form>
             <button id="submit9" onclick="parseSingleChoice('ISNULL', 'ISNULL', 'submit9' , 'ISNULL')">Submit</button></p>
 
 
             <p class="fragestellung">Mit welchem Befehl können Sie eine Schleife durchlaufen lassen, welche prüft ob ein Kunstwerk in der Epoche des Expressionismus entstanden ist oder nicht.
-                                     Zusätzlich soll die Ausgabespalte 'Expressionismus JA / NEIN' benannt werden.
+                                     Zusätzlich soll die Ausgabespalte mit 'Expressionismus JA / NEIN' benannt werden.
             </p>
             
             <form name="exp">
@@ -267,7 +267,7 @@
 
 
          <h2>2. Lückentext</h2>
-         <h3 class="fragestellung">Füllen Sie die Lücken aus. Beachten Sie, dass einige Befehle mehrere Wörter enthalten und wenn diese direkt hintereinander stehen nur eine Lücke für sie vorgesehen ist.
+         <h3 class="fragestellung">Füllen Sie die Lücken aus. Beachten Sie, dass einige Befehle mehrere Wörter enthalten. Wenn diese direkt hintereinander stehen, ist nur eine Lücke für sie vorgesehen.
             <br>
             Bitte achten Sie dabei darauf, dass Sie alle Befehle in Großbuchstaben eingeben.
             <br>
@@ -356,7 +356,7 @@
                  <th><input class="input" type="radio" name="wf2" value="false"></th>
              </tr>
              <tr>
-                <th>"INNER JOIN" gibt Zeilen, die nicht übereinstimmen aus beiden Tabellen aus.</th>
+                <th>"INNER JOIN" gibt Zeilen, die nicht übereinstimmen, aus beiden Tabellen aus.</th>
                 <th><input class="input" type="radio" name="wf3" value="true"></th>
                 <th><input class="input" type="radio" name="wf3" value="false"></th>
             </tr>
@@ -366,7 +366,7 @@
                <th><input class="input" type="radio" name="wf4" value="false"></th>
            </tr>
            <tr>
-               <th>"LEFT JOIN" gibt alle Zeilen aus der linken Tabelle und die übereinstimmenden Zeilen aus der rechten Tabelle aus</th>
+               <th>"LEFT JOIN" gibt alle Zeilen aus der linken Tabelle und die übereinstimmenden Zeilen aus der rechten Tabelle aus.</th>
                <th><input class="input" type="radio" name="wf5" value="true"></th>
                <th><input class="input" type="radio" name="wf5" value="false"></th>
              </tr>
@@ -386,7 +386,7 @@
                 <th><input class="input" type="radio" name="wf8" value="false"></th>
             </tr>
             <tr>
-                <th>Wenn Sie mit dem Befehl "EXISTS" und der Bedingung, dass der Eintrittspreis des gesuchten Museums unter 4€ liegen soll, wird Ihnen als Antwort Russland ausgegeben. </th>
+                <th>Wenn Sie mit dem Befehl "EXISTS" und der Bedingung, dass der Eintrittspreis des gesuchten Museums unter 4€ liegen soll, suchen, wird Ihnen als Antwort Russland ausgegeben. </th>
                 <th><input class="input" type="radio" name="wf9" value="true"></th>        
                 <th><input class="input" type="radio" name="wf9" value="false"></th>
             </tr>
@@ -396,7 +396,7 @@
                 <th><input class="input" type="radio" name="wf10" value="false"></th>
             </tr>
             <tr>
-                <th>Wenn Sie mit dem Operator "UNION" arbeiten wollen, müssen die SELECT-Auswahlen, welche Sie vereinigen wollen nicht zwingend die gleiche Anzahl an Spalten haben</th>
+                <th>Wenn Sie mit dem Operator "UNION" arbeiten wollen, müssen die SELECT-Auswahlen, welche Sie vereinigen wollen, nicht zwingend die gleiche Anzahl an Spalten haben.</th>
                 <th><input class="input" type="radio" name="wf11" value="true"></th>           
                 <th><input class="input" type="radio" name="wf11" value="false"></th>
             </tr>
@@ -452,16 +452,16 @@
              </div>
              <div class="div">
                  <input class="input" type="checkbox" value="B">
-                 <label>SELECT MAX(Preis) FROM Künstler</label>
+                 <label>SELECT MAX(Preis) FROM Museen</label>
              </div>
              <div class="div">
                  <input class="input" type="checkbox" value="C">
-                 <label>SELECT HIGHEST FROM Künstler ORDER BY Preis</label>
+                 <label>SELECT HIGHEST FROM Museen ORDER BY Preis</label>
              </div>
          </form>
          <button id="submit14" onclick="parseMultipleChoice('multiplechoice2', 'submit14' , [true, true, false,])">Submit</button>
 
-         <p class="fragestellung">Sie wollen ein Land bereisen, in welchem die Einwohnerzahl zwischen 20 Millionen und 60 Millionen liegt, welche Befehle können Sie anwenden um dies heraus zu finden?</p> 
+         <p class="fragestellung">Sie wollen ein Land bereisen, in welchem die Einwohnerzahl zwischen 20 Millionen und 60 Millionen liegt. Welche Befehle können Sie anwenden um dies heraus zu finden?</p> 
          <form name="multiplechoice3">
              <div class="div">
                  <input class="input" type="checkbox" value="A">
@@ -483,26 +483,26 @@
          <button id="submit15" onclick="parseMultipleChoice('multiplechoice3', 'submit15' , [true, true, true, false,])">Submit</button>
 
          
-         <p class="fragestellung">Sie wollen statt dem Albertinum die 'Staatlichen Kunstsammlungen Dresden' in die Tabelle Museen eintragen, 
-            welche Befehle können Sie nutzen? </p> 
+         <p class="fragestellung">Sie wollen statt dem "Albertinum" die "Staatlichen Kunstsammlungen Dresden" in die Tabelle Museen eintragen.
+            Welche Befehle können Sie nutzen? </p> 
          <form name="multiplechoice4">
             <div class="div">
                  <input class="input" type="checkbox" value="C">
-                 <label>UPDATE Museen SET MName = Staatlichen Kunstsammlungen Dresden WHERE Kunstwerk = Taumelnder Mann</label>
+                 <label>UPDATE Museen SET MName = Staatliche Kunstsammlungen Dresden WHERE Kunstwerk = Taumelnder Mann</label>
              </div>
              <div class="div">
                  <input class="input" type="checkbox" value="A">
-                 <label>UPDATE Museen SET MName = Staatlichen Kunstsammlungen Dresden WHERE MID = 1</label>
+                 <label>UPDATE Museen SET MName = Staatliche Kunstsammlungen Dresden WHERE MID = 1</label>
              </div>
              <div class="div">
                  <input class="input" type="checkbox" value="B">
-                 <label>UPDATE Museen SET MName = Staatlichen Kunstsammlungen Dresden WHERE Gründungsjahr = 1965</label>
+                 <label>UPDATE Museen SET MName = Staatliche Kunstsammlungen Dresden WHERE Gründungsjahr = 1965</label>
              </div>
 
          </form>
          <button id="submit16" onclick="parseMultipleChoice('multiplechoice4', 'submit16' , [false, true, true,])">Submit</button>
          
-         <p class="fragestellung">Mit welchen Befehlen können Sie herausfinden, aus welchen Ländern mindestens 2 Künstler stammen und diese nach der Anzahl der Künstler absteigend ordnen?</p> 
+         <p class="fragestellung">Mit welchen Befehlen können Sie herausfinden, aus welchen Ländern mindestens 2 Künstler stammen und diese Länder nach der Anzahl der Künstler absteigend ordnen?</p> 
          <form name="multiplechoice5">
             <div class="div">
                  <input class="input" type="checkbox" value="C">
@@ -536,7 +536,7 @@
 
 
          <h2>5. Zuordnen</h2>
-         <h3 class="fragestellung">Bitte ordnen Sie der Antwort der 3. Spalte den richtigen Partner zu indem Sie den Buchstaben, welcher vor der richtigen Antwort in der ersten Spalte steht in das Eingabefeld (Spalte 2) vor die richtige Antwort der 3. Spalte schreiben.
+         <h3 class="fragestellung">Bitte ordnen Sie der in der Spalte "Funktion" genannten Antwort den richtigen Partner zu, indem Sie den Buchstaben, welcher vor der richtigen Antwort in der ersten Spalte steht, in das jeweilige Eingabefeld (Spalte 2) schreiben.
             <br> In der Aufgabe werden die allgemeinen Wildcards abgefragt, auch wenn Microsoft Access teilweise andere Symbole unterstützt. 
             <br>
             Für jede richtige Zuordnung erhöht sich Ihr Punktestand um einen Punkt und nach dem Klicken des Submit-Buttons färbt sich Ihre Eingabe grün. 
@@ -553,7 +553,7 @@
              <tr>
                  <th>A: []</th>
                  <th><input class="input1" type="text" id="B" name="zuordnen" placeholder="?"></th>      <!--Erstellung eines Eingabefeldes, welches momentan durch den Platzhalter "?" gefüllt ist-->
-                 <th class="spalte3">steht für kein oder mehr als ein nicht vorhandene Zeichen</th>
+                 <th class="spalte3">steht für kein oder mehr als ein nicht vorhandenes Zeichen</th>
              </tr>
              <tr>
                 <th>B: %</th>
@@ -568,7 +568,7 @@
             <tr>
                 <th>D: -</th>
                 <th><input class="input1" type="text" id="A" name="zuordnen" placeholder="?"></th>
-                <th class="spalte3">es können alle Zeichen, welche in den Klammern stehen in die Lücke eingesetzt werden</th>
+                <th class="spalte3">es können alle Zeichen, welche in den Klammern stehen, in die Lücke eingesetzt werden</th>
             </tr>
             <tr>
                 <th>E: [^]</th>
