@@ -123,7 +123,9 @@ figcaption{
 }
 .input1{
     margin-left: 70px;
-    width: 30px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
 }
 .download a{
     text-align: center;
@@ -140,4 +142,7 @@ h3{
 }
 tr{
     margin-bottom: 25px;
+}
+.tabellenüberschrift{
+margin-left: 0px;
 }
