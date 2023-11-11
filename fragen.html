@@ -41,7 +41,7 @@
         <p class="fragestellung">Was bedeutet SQL ausgeschrieben?</p>
            
         <form name="SQL">              
-            <!--Erstellung eines Containers mit jeweils einem Anklick-Element (radio), Beschriftung (label)-->
+            <!--Erstellung eines Containers mit jeweils einem Anklick-Element (radio), Beschriftung (label), Wertenamen (value)-->
             <div class="div">
                 <input class="input" type="radio" name="SQL" value="Ans1">
                 <label for="Ans1">Standard Quality Language</label>
@@ -60,8 +60,8 @@
 
         <p class="fragestellung">Mit welchem Befehl werden die Einträge der Spalte "Medium" aus der Tabelle "Kunstwerk" ausgegeben?</p>
            
-        <form name="formname">              
-            <!--Erstellung eines Containers mit jeweils einem Anklick-Element (radio), Beschriftung (label)-->
+        <form name="select">              
+            
             <div class="div">
                 <input class="input" type="radio" name="select" value="SELECTMediumFROMKunstwerk">
                 <label for="SELECT Medium FROM Kunstwerk">SELECT Medium FROM Kunstwerk</label>
@@ -75,9 +75,8 @@
                 <label for="SELECT * FROM Medium Kunstwerk">SELECT * FROM Medium Kunstwerk</label>
             </div>
         </form>
-        <button id="submit2" onclick="parseSingleChoice('formname', 'select', 'submit2' , 'SELECTMediumFROMKunstwerk')">Submit</button>
-            <!--durch das klicken des Submit BUttons, werden die Antworten der Form geprüft, Befehl in JS-Datei unter parseSingleChoice-->
-       
+        <button id="submit2" onclick="parseSingleChoice('select', 'select', 'submit2' , 'SELECTMediumFROMKunstwerk')">Submit</button>
+                  
        
 
 
@@ -227,7 +226,7 @@
             <button id="submit9" onclick="parseSingleChoice('ISNULL', 'ISNULL', 'submit9' , 'ISNULL')">Submit</button></p>
 
 
-            <p class="fragestellung">Mit welchem Befehl können Sie eine Schleife durchlaufen lassen, welche prüft ob ein Kunstwerk in der Epoche des Expressionismus entstanden ist oder nicht.
+            <p class="fragestellung">Mit welchem Befehl können Sie eine Schleife durchlaufen lassen, welche prüft, ob ein Kunstwerk in der Epoche des Expressionismus entstanden ist oder nicht.
                                      Zusätzlich soll die Ausgabespalte mit 'Expressionismus JA / NEIN' benannt werden.
             </p>
             
@@ -269,16 +268,16 @@
          <h2>2. Lückentext</h2>
          <h3 class="fragestellung">Füllen Sie die Lücken aus. Beachten Sie, dass einige Befehle mehrere Wörter enthalten. Wenn diese direkt hintereinander stehen, ist nur eine Lücke für sie vorgesehen.
             <br>
-            Bitte achten Sie dabei darauf, dass Sie alle Befehle in Großbuchstaben eingeben.
+            Bitte achten Sie dabei darauf, dass Sie alle Befehle in Großbuchstaben eingeben. Bitte setzen Sie auch keine Leerzeichnen am Schluss Ihrer Eingaben
             <br>
             Für jede richtig ausgefüllte Lücke wird zu ihrem Punktescore ein Punkt addiert und nach dem Klicken des Submit-Buttons färben sich diese Lücken grün. 
             Bei falschen Antworten färbt sich Ihre Eingabe rot und es wird Ihnen in Klammern die richtige Lösung angezeigt.
-         </h3>
+         </h3><!--Erstellung einer Aufgabenbeschreibung-->
          <form name="lückentext">
              <p class="lückentext">
                 Eintragen neuer Werte in die Tabelle: <br>
                 INSERT
-                 <input class="input" type="text" id="lückentext" name="lückentext">        <!--Es entsteht ein Eingabefeld-->
+                 <input class="input" type="text" id="lückentext" name="lückentext">        <!--Es entsteht ein Eingabefeld (type=text)-->
                  Museum (MID, MName, MOrt, Preis)
                  <input class="input" type="text" id="lückentext" name="lückentext">
                  ('21', 'Secret Art', 'Lichtenstein', '14')
@@ -330,24 +329,24 @@
              </p>
          </form>
          <button id="submit12" onclick="parseGapText('lückentext', 'submit12' ,['INTO', 'VALUES', 'AVG', 'WHERE', 'LIKE', 'IN', 'COUNT', '<', 'CREATE PROCEDURE', 'AS', 'GO', 'EXEC', 'SelectAllLänder'])">Submit</button>
-                        <!--durch das klicken des Submit Buttons werden alle Eingaben überprüft -> Werte des Arrays sind die richtigen Eingaben-->
+                        <!--durch das klicken des Submit Buttons werden alle Eingaben überprüft -> Werte des Arrays sind die richtigen Eingaben, genauer Befehl unter 'parseGapText' im fragen.js-->
          
 
          <h2>3. Wahr-Falsch</h2>
-         <h3 class="fragestellung">Klicken Sie an ob die Aussagen wahr oder falsch sind. Für jedes richtig gesetzte Kreuz wird ihr Score um einen Punkt erhöht.
+         <h3 class="fragestellung">Klicken Sie an, ob die Aussagen wahr oder falsch sind. Für jedes richtig gesetzte Kreuz wird ihr Score um einen Punkt erhöht.
             Bei einer richtigen Auswahl färbt sich die Zeile nach dem Klicken des Submit-Buttons grün, wenn die Auswahl falsch ist, färbt sich die Zeile rot.
          </h3>
          <form name="Wahr-Falsch" id="Wahr-Falsch">
             <table>     <!--Anlegen einer Tabelle-->
              <tr>       <!--Tabellenzeile-->
-                 <th ><h3>Frage</h3></th>   <!--th<=Tebellenzelle-->
+                 <th ><h3>Frage</h3></th>   <!--th=Tabellenzelle-->
                  <th ><h3>Wahr</h3></th>
                  <th ><h3>Falsch</h3></th>
              </tr>
          
              <tr>
                  <th>Bei "SELECT DISTINCT" werden nur unterschiedliche Werte ausgegeben.</th>
-                 <th><input class="input" type="radio" name="wf1" value="true"></th>            <!--Erstellung eines klickbaren Elements-->
+                 <th><input class="input" type="radio" name="wf1" value="true"></th>            <!--Erstellung eines klickbaren Elements (radio)-->
                  <th><input class="input" type="radio" name="wf1" value="false"></th>
              </tr>
              <tr>
@@ -410,7 +409,7 @@
          </form>
          <button id="submit13" onclick="parseTrueFalse('Wahr-Falsch', ['wf1', 'wf2', 'wf3', 'wf4', 'wf5', 'wf6', 'wf7', 'wf8', 'wf9', 'wf10', 'wf11', 'wf12'], 
          'submit13', ['true', 'true', 'false', 'false', 'true', 'false', 'true', 'false', 'false', 'true', 'false', 'false'])">Submit</button>
-                <!--durch klicken des buttons werden Lösungen kontrolliert -> Anlegung array-->
+                <!--durch klicken des buttons werden Lösungen kontrolliert -> Anlegung Arrays mit Auswahloptionen / richtigen Antworten, Javas -->
          
  
          <h2>4. Multiple Choice</h2>
@@ -442,7 +441,7 @@
             </div>
          </form>
          <button id="submit14" onclick="parseMultipleChoice('question8', 'submit14' , [true, false, true, true, true])">Submit</button>
-                <!--durch klicken des BUttons werden Lösungen überprüft, Array definiert Lösungen-->
+                <!--durch klicken des BUttons werden Lösungen überprüft, Array definiert ob Lösung richtig oder falsch nach Reihenfolge-->
 
          <p class="fragestellung">Wie kann man sich den höchsten Preis der Museen anzeigen lassen?</p> 
          <form name="multiplechoice2">
@@ -483,7 +482,7 @@
          <button id="submit15" onclick="parseMultipleChoice('multiplechoice3', 'submit15' , [true, true, true, false,])">Submit</button>
 
          
-         <p class="fragestellung">Sie wollen statt dem "Albertinum" die "Staatlichen Kunstsammlungen Dresden" in die Tabelle Museen eintragen.
+         <p class="fragestellung">Sie wollen statt dem "Albertinum" die "Staatliche Kunstsammlungen Dresden" in die Tabelle Museen eintragen.
             Welche Befehle können Sie nutzen? </p> 
          <form name="multiplechoice4">
             <div class="div">
@@ -536,7 +535,7 @@
 
 
          <h2>5. Zuordnen</h2>
-         <h3 class="fragestellung">Bitte ordnen Sie der in der Spalte "Funktion" genannten Antwort den richtigen Partner zu, indem Sie den Buchstaben, welcher vor der richtigen Antwort in der ersten Spalte steht, in das jeweilige Eingabefeld (Spalte 2) schreiben.
+         <h3 class="fragestellung">Bitte ordnen Sie der in der Spalte "Funktion" genannten Antwort den richtigen Partner zu, indem Sie den Buchstaben, welcher vor der richtigen Antwort in der ersten Spalte steht, in das jeweilige Eingabefeld der Spalte 2 schreiben.
             <br> In der Aufgabe werden die allgemeinen Wildcards abgefragt, auch wenn Microsoft Access teilweise andere Symbole unterstützt. 
             <br>
             Für jede richtige Zuordnung erhöht sich Ihr Punktestand um einen Punkt und nach dem Klicken des Submit-Buttons färbt sich Ihre Eingabe grün. 
@@ -581,7 +580,7 @@
          <button id="submit18" onclick="parseSelectionText('zuordnen', 'submit18' ,['B', 'D', 'E', 'A', 'C'])">Submit</button>
                 <!--durch klicken des Buttons werden Lösungen kontrolliert -> Array zeigt Lösungen -->
 
-        <div class="buttoncontainer">       <!-- Erstellung eines Divs, welcher einen Start und einen HIlfe Button einbindet (wichtig für css....)-->
+        <div class="buttoncontainer">       <!-- Erstellung eines Divs, welcher einen Start und einen Hilfe Button einbindet (wichtig für css....)-->
                     <button class="auswerungsbutton" onclick="location.replace('auswertung.html')">Auswertung</button> <!--mit dem drücken des Start-Buttons wird in eine neue HTML-Datei gewechselt-->
         </div>
          

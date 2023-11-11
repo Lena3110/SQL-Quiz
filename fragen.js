@@ -53,9 +53,9 @@ function parseGapText(formName, submitID, correctAnswers) {
         if (inputs[i].value == correctAnswers[i]) {
             score += 1                              // je richtig ausgefüllte Lücke wird der Score im Localstorage um einen Punkt hochgesetzt
             inputs[i].style.color = "rgba(9,121,24,1)"
-            inputs[i].disabled = true           // wenn richtige Antwort, grünfärbung und deaktivierung
+            inputs[i].disabled = true           // wenn richtige Antwort, Grünfärbung und Deaktivierung
         } else {
-            inputs[i].style.color = "red"           // wenn falsche Antwort rotfärbung Deaktivierung
+            inputs[i].style.color = "red"           // wenn falsche Antwort Rotfärbung, Deaktivierung
             inputs[i].value += ' ('+ correctAnswers[i] +')'
             inputs[i].disabled = true
         }
@@ -70,7 +70,7 @@ function parseTrueFalse(formName, formValueNames, submitID, correctAnswers) {
     let trs = document.querySelectorAll("form[name="+formName+"] tr")
     let inputs = document.querySelectorAll("form[name="+formName+"] input")     // Definition der Variablen
     for (valueName of formValueNames) {
-        answers.push(document.forms[formName][valueName].value)     // HInzufügen der Antworten in Array
+        answers.push(document.forms[formName][valueName].value)     // Hinzufügen der Antworten in Array
     }                                                                         
     if (answers.includes('')) {
         alert('Bitte geben Sie erst alle Antworten ab!')        
@@ -78,7 +78,7 @@ function parseTrueFalse(formName, formValueNames, submitID, correctAnswers) {
     }
         
     
-    for (let i = 0; i < answers.length; i++) {              // geht Array durch, wenn richtig grünfärbung
+    for (let i = 0; i < answers.length; i++) {              // geht Array durch, wenn richtig Grünfärbung
         if (answers[i] == correctAnswers[i]) {
             score += 1
             trs[i+1].style.color = "rgba(9,121,24,1)"
@@ -141,7 +141,7 @@ function parseMultipleChoice(formName, submitID, correctAnswers) {
             divs[i].style.color = "white";
             inputs[i].disabled = true
             score += 0.5
-        } else {                                        //geht durch Array durch, wenn richtig grünfärbung, sonst rotfärbung
+        } else {                                        //geht durch Array durch, wenn richtig Grünfärbung, sonst Rotfärbung
             divs[i].style.backgroundColor = "red";
             divs[i].style.color = "white";
             inputs[i].disabled = true
