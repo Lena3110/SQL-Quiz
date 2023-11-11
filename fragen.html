@@ -316,7 +316,7 @@
                  Erstellen einer fertigen, gespeicherten Anweisung (Abrufen aller Datensätze der Ländertabelle), welche mit einem Befehl abgerufen werden kann:
                  <br>
                  <input class="input" type="text" id="lückentext" name="lückentext">
-                 SelectAllLänder
+                 SAL
                  <input class="input" type="text" id="lückentext" name="lückentext">
                  Select * From Länder
                  <input class="input" type="text" id="lückentext" name="lückentext">
@@ -328,7 +328,7 @@
                 <input class="input" type="text" id="lückentext" name="lückentext">
              </p>
          </form>
-         <button id="submit12" onclick="parseGapText('lückentext', 'submit12' ,['INTO', 'VALUES', 'AVG', 'WHERE', 'LIKE', 'IN', 'COUNT', '<', 'CREATE PROCEDURE', 'AS', 'GO', 'EXEC', 'SelectAllLänder'])">Submit</button>
+         <button id="submit12" onclick="parseGapText('lückentext', 'submit12' ,['INTO', 'VALUES', 'AVG', 'WHERE', 'LIKE', 'IN', 'COUNT', '<', 'CREATE PROCEDURE', 'AS', 'GO', 'EXEC', 'SAL'])">Submit</button>
                         <!--durch das klicken des Submit Buttons werden alle Eingaben überprüft -> Werte des Arrays sind die richtigen Eingaben,
                              genauer Befehl unter 'parseGapText' im fragen.js-->
          
@@ -441,7 +441,7 @@
                 <label>SELECT KID, KName, Kunstwerk, Geburtstjahr, Todesjahr, Nationalität FROM Künstler ORDER BY KName DESC</label>
             </div>
          </form>
-         <button id="submit14" onclick="parseMultipleChoice('question8', 'submit14' , [true, false, true, true, true])">Submit</button>
+         <button id="submit14" onclick="parseMultipleChoice('question8', 'submit14' , [true, true, false, true, false])">Submit</button>
                 <!--durch klicken des BUttons werden Lösungen überprüft, Array definiert ob Lösung richtig oder falsch nach Reihenfolge-->
 
          <p class="fragestellung">Wie kann man sich den höchsten Preis der Museen anzeigen lassen?</p> 
