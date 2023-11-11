@@ -1,9 +1,9 @@
 localStorage.setItem("score", 0)
 
 function parseSingleChoice(formName, formValueName, submitID, correctAnswer) {
-    let score = parseFloat(localStorage.getItem('score'))
+    let score = parseFloat(localStorage.getItem('score'))       //Score wird aus BrowserStorage geladen
     let answer = document.forms[formName][formValueName].value;
-    let inputs = document.querySelectorAll("form[name="+formName+"] input")
+    let inputs = document.querySelectorAll("form[name="+formName+"] input")     //Definition der Variablen
     let divs = document.querySelectorAll("form[name="+formName+"] div")
     // Wählt alle input und div Elemente aus dem form
     
@@ -31,16 +31,16 @@ function parseSingleChoice(formName, formValueName, submitID, correctAnswer) {
         for (div of divs) {div.style.color = 'white';}      /* Bei Auswahl der falschen Antwort, werden die
          falschen Antworten rot und die richtige Antwort grün eingefärbt, Sperrung der auswahl und des Buttons erfolgt*/
     }  
-    localStorage.setItem("score", score)   
+    localStorage.setItem("score", score)        //neuer Score wird gespeichert
 }
 
 function parseGapText(formName, submitID, correctAnswers) {
     let score = parseFloat(localStorage.getItem('score'))
     let inputs = document.querySelectorAll("form[name="+formName+"] input")
-    let answers = []        //Definition der Variablen
+    let answers = []        
     for (input of inputs) {
         answers.push(input.value)
-    }       // in Array der Lösungen werden Antworten hinzugefügt
+    }       // in Array der Antworten werden Inputwerte hinzugefügt
 
     for (answer of answers) {
         if (answer == '') {
@@ -68,7 +68,7 @@ function parseTrueFalse(formName, formValueNames, submitID, correctAnswers) {
     let score = parseFloat(localStorage.getItem('score'))
     let answers = []
     let trs = document.querySelectorAll("form[name="+formName+"] tr")
-    let inputs = document.querySelectorAll("form[name="+formName+"] input")     // Definition der Variablen
+    let inputs = document.querySelectorAll("form[name="+formName+"] input")    
     for (valueName of formValueNames) {
         answers.push(document.forms[formName][valueName].value)     // Hinzufügen der Antworten in Array
     }                                                                         
@@ -97,7 +97,7 @@ function parseTrueFalse(formName, formValueNames, submitID, correctAnswers) {
 
 function parseSelectionText(formName, submitID, correctAnswers) {
     let score = parseFloat(localStorage.getItem('score'))
-    let inputs = document.querySelectorAll("form[name="+formName+"] input")     //Definition Variablen
+    let inputs = document.querySelectorAll("form[name="+formName+"] input")    
     let answers = []
     for (input of inputs) {
         answers.push(input.value)
@@ -113,7 +113,7 @@ function parseSelectionText(formName, submitID, correctAnswers) {
     for (let i = 0; i < answers.length; i++) {
         if (inputs[i].value == correctAnswers[i]) {
             inputs[i].style.color = "rgba(9,121,24,1)"
-            inputs[i].disabled = true               // durchgehen des Arrays, bei Übereinstimmunen grün-, bei falscher Eingabe rotfärbung
+            inputs[i].disabled = true               // durchgehen des Arrays, bei Übereinstimmunen Grün-, bei falscher Eingabe Rotfärbung
             score += 1                              //der Score wird im Localstorage um 1 erhöht
         } else {
             inputs[i].style.color = "red"
@@ -130,7 +130,7 @@ function parseMultipleChoice(formName, submitID, correctAnswers) {
     let inputs = document.querySelectorAll("form[name="+formName+"] input")
     let answers = []                    //Definiton aller Variablen
     for (input of inputs) {
-        answers.push(input.checked)         //Antworten kommen in Lösungsarray
+        answers.push(input.checked)         //Inputs werden in Antwortsarray abgelegt
     }
 
     let divs = document.querySelectorAll("form[name="+formName+"] div")
